@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the specialty</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style media="screen">
+    /* Reset de bază pentru browser */
+body, h1, h2, p, section, div, img, footer, a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding-ul și border-ul în lățimea elementului */
+  text-align: 2px 2px 4px;
+}
+
+body {
+  font-family: 'Arial', sans-serif; /* Un font generic, similar cu cel din exemplu */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #203a43; /* Un fundal gri foarte deschis, similar cu zona din jurul paginii albe */
+  color: #333; /* Culoare implicită pentru text */
+}
+
+.page-container {
+  width: 90%; /* Lățimea containerului principal */
+  max-width: 1200px; /* Lățimea maximă a paginii tale */
+  background-color: #ffffff; /* Fundal alb pentru conținutul paginii */
+  padding: 60px 80px; /* Padding interior pentru a crea spațiu în jurul conținutului */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* O umbră subtilă pentru a simula "fereastra" */
+  border-radius: 8px; /* Colțuri rotunjite, ca în Figma */
+  display: flex;
+  flex-direction: column;
+  gap: 50px; /* Spațiu între secțiuni */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Stiluri pentru antetul paginii */
+.page-header {
+  margin-bottom: 20px; /* Spațiu sub titlul principal */
+}
+
+.main-title {
+  font-size: 3em; /* Mărimea fontului pentru "About the specialty" */
+  font-weight: bold; /* Text mai bold, similar cu exemplu */
+  color: #333;
+  line-height: 1.2;
+  font-family: 'Dancing Script', cursive;
+  text-align: 2px 2px 4px;
+
+}
+
+/* Stiluri pentru fiecare secțiune de specialitate */
+.specialty-section {
+  display: flex;
+  align-items: flex-start; /* Aliniază conținutul la partea de sus */
+  gap: 40px; /* Spațiu între text și imagine */
+  width: 100%;
+}
+
+.specialty-section .text-content {
+  flex: 1; /* Permite blocului de text să ocupe spațiul rămas */
+  padding-top: 10px; /* Ajustare vizuală pentru aliniere cu imaginea */
+}
+
+.specialty-section .text-content h2 {
+  font-size: 1.8em; /* Mărimea fontului pentru titlurile sub-secțiunilor */
+  font-weight: normal; /* Font normal, nu bold */
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.specialty-section .text-content p {
+  font-size: 1.05em; /* Mărimea fontului pentru paragraf */
+  color: #555;
+  line-height: 1.6; /* Spațiere între linii pentru lizibilitate */
+}
+
+.specialty-section .image-content {
+  flex-shrink: 0; /* Împiedică imaginea să se micșoreze */
+  width: 400px; /* Lățime fixă pentru imagine */
+  height: 250px; /* Înălțime fixă pentru imagine */
+  overflow: hidden; /* Ascunde orice parte a imaginii care depășește dimensiunile */
+  border-radius: 8px; /* Colțuri rotunjite pentru imagini */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* O umbră subtilă pentru imagini */
+}
+
+.specialty-section .image-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asigură că imaginea acoperă complet zona fără a se deforma */
+  display: block; /* Elimină spațiul suplimentar de sub imagine */
+}
+
+/* Inversarea ordinii pentru a doua secțiune, conform exemplului */
+.specialty-section.reverse-layout {
+  flex-direction: row-reverse; /* Invertează ordinea elementelor (imaginea vine prima) */
+}
+
+/* Ajustează padding-ul pentru text când layout-ul este inversat */
+.specialty-section.reverse-layout .text-content {
+  padding-right: 0;
+  padding-left: 40px;
+}
+
+/* Stiluri pentru subsolul cu pictograme social media */
+.social-footer {
+  display: flex;
+  justify-content: center; /* Centrează pictogramele orizontal */
+  gap: 30px; /* Spațiu între pictograme */
+  margin-top: 50px; /* Spațiu deasupra subsolului */
+  padding-top: 20px; /* Un pic de padding pentru a separa de conținutul de sus */
+  border-top: 1px solid #eee; /* O linie subțire de separare, similar cu exemplul */
+}
+
+.social-footer a {
+  color: #777; /* Culoare implicită pentru pictograme */
+  font-size: 1.8em; /* Mărimea pictogramelor */
+  transition: color 0.3s ease; /* Animație la hover */
+}
+
+.social-footer a:hover {
+  color: #007bff; /* Culoare albastră la hover */
+}
+
+/* Media Queries pentru responsivitate (pentru a arăta bine pe telefoane/tablete) */
+@media (max-width: 992px) {
+  .page-container {
+      padding: 40px 50px;
+  }
+  .main-title {
+      font-size: 2.5em;
+      font-family: 'Dancing Script', cursive;
+      text-align: 2px 2px 4px;
+  }
+  .specialty-section,
+  .specialty-section.reverse-layout {
+      flex-direction: column; /* Pe ecrane mai mici, așează elementele pe verticală */
+      align-items: center; /* Centrează elementele */
+      gap: 25px; /* Reduce spațiul dintre ele */
+  }
+  .specialty-section .text-content,
+  .specialty-section.reverse-layout .text-content {
+      padding: 0; /* Elimină padding-ul lateral */
+      text-align: center; /* Centrează textul */
+  }
+  .specialty-section .text-content h2 {
+      font-size: 1.6em;
+  }
+  .specialty-section .text-content p {
+      font-size: 1em;
+  }
+  .specialty-section .image-content {
+      width: 80%; /* Imaginea ocupă mai multă lățime pe ecrane mici */
+      height: auto; /* Înălțime automată pentru a păstra proporțiile */
+      max-width: 450px; /* Limitează lățimea maximă a imaginii */
+  }
+  .social-footer {
+      margin-top: 30px;
+      gap: 20px;
+  }
+  .social-footer a {
+      font-size: 1.5em;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-container {
+      padding: 30px;
+      width: 95%;
+      box-shadow: none; /* Elimină umbra pe ecrane foarte mici */
+      border-radius: 0; /* Elimină colțurile rotunjite pe ecrane foarte mici */
+  }
+  .main-title {
+      font-size: 2em;
+  }
+  .specialty-section {
+      gap: 20px;
+  }
+  .specialty-section .text-content h2 {
+      font-size: 1.4em;
+  }
+  .social-footer {
+      gap: 15px;
+  }
+  .social-footer a {
+      font-size: 1.3em;
+  }
+}
+h6 {
+  text-align: center;
+  text-shadow: 0px 0px 1px;
+}
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <header class="page-header">
+            <h1 class="main-title">About the specialty</h1>
+        </header>
+
+        <section class="specialty-section">
+            <div class="text-content">
+                <h2>Operator suport tehnic al calculatoarelor</h2>
+                <p>Asigură întreținerea, repararea și configurarea echipamentelor de calcul și a rețelelor de bază. Este omul-cheie din spatele funcționării tehnice a birourilor moderne.</p>
+            </div>
+            <div class="image-content">
+                <img src="https://ceiti.md/wp-content/uploads/2024/05/Laborator213.jpg" alt="Operator suport tehnic într-un birou modern">
+            </div>
+        </section>
+
+        <section class="specialty-section reverse-layout">
+            <div class="text-content">
+                <h2>Operator prelucrare date</h2>
+                <p>Se ocupă cu introducerea și validarea corectă a datelor, precum și prelucrarea acestora în baze de date, foi de calcul sau aplicații informatice specifice.</p>
+            </div>
+            <div class="image-content">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT75axWZx8ZLE5a_OI-_WqRn3iy_vzew5Nro6atCd0UpBrIj44F_L-dTzFXmDpv77I375c&usqp=CAU" alt="Persoane care lucrează la prelucrarea datelor">
+            </div>
+        </section>
+<h6>© Rubby | Created by Vivi ★ | CEITI</h6>
+        <footer class="social-footer">
+            <a href="https://www.instagram.com/ceitimd?igsh=MTZnd2dkNzQ2eG03MQ=="><i class="fab fa-instagram"></i></a>
+            <a href="https://t.me/ceitimd"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.facebook.com/share/1J6pfxVpDD/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@ceiti.md?_t=ZM-8wwaY74Stk6&_r=1"><i class="fab fa-tiktok"></i></a>
+            <a href="https://youtube.com/@ceitimd?si=ZfIvEPRhv0PKVOCd" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/ceiti_md"><i class="fab fa-x-twitter"></i></a>
+        </footer>
+    </div>
+</body>
+</html>
